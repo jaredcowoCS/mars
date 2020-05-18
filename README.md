@@ -32,7 +32,7 @@ Since I used Ruby on Rails for this project, I had to follow the Model-View-Cont
   * Start Rails Server `rails s`
 
 ## Testing
-Automated Testing is a major part of Mars. Our test suite consists of feature/integration and units tests both on the front-end and the back-end. As a result before any changes/new features are integrated into the `master`  branch, they must be covered by tests and all existing tests must pass.
+Automated Testing is a major part of Mars. Our test suite consists of integration and units tests both on the front-end and the back-end. As a result before any changes/new features are integrated into the `master`  branch, they must be covered by tests and all existing tests must pass.
 
 - `rspec spec` - Runs the Back-End suites
 
