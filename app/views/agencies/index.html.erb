@@ -1,0 +1,46 @@
+<%= button_to "Add New Agency", new_agency_path, method: :get%>
+
+  <html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="flex-container">
+<table>
+  <tr>
+    <th>Agency Name</th>
+    <th>Billing Terms</th>
+    <th>Credit Status</th>
+    <th>Actions</th>
+  </tr>
+  <% @agencies.each do |agency|%>
+  <tr>
+      <td><%= agency.name%></td>
+      <td><%= agency.billing_terms%></td>
+      <td><%= agency.credit_rating%></td>
+      <td><%= button_to "Edit", edit_agency_path(agency), method: :get , :class => 'button'%></td>
+
+    <%end%>
+  </tr>
+</table>
+</div>
+</nav>
+</body>
+</html>

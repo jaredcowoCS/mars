@@ -1,0 +1,60 @@
+<h1>Agencies#new</h1>
+<p>Find me in app/views/agencies/new.html.erb</p>
+
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(32,150,243);
+  color: white;
+  padding: 14px 2px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+</style>
+
+<%= form_for @agency do |f|%>
+  <body>
+  <div class="div">
+  <%= f.label :name%><br>
+  <%= f.text_field :name%><br>
+  <%= f.label :billing_terms%><br>
+  <%= f.text_field :billing_terms, {min: 1, max: 2}%><br>
+  <%= f.label :credit_rating%><br>
+  <%= f.select :credit_rating, Agency.credit_ratings.keys, {}, class: 'user-roles-select' %><br><br>
+  <div class="grid-container">
+    <div class="submit-container">
+      <%= f.submit%>
+    </div>
+    <div class="cancel-container">
+  <%= link_to "Cancel", agencies_path, {:class=>"cancel-button"} %>
+  </div>
+  </div>
+  <% if @agency.errors.any?%>
+  <ul>
+    <% @agency.errors.full_messages.each do |message| %>
+    <div class="alert alert-warning">
+      <strong>Error!</strong> <%= message%>
+    </div>
+    <% end %>
+  </ul>
+  <% end %>
+</body>
+
+  <%end%>
+
+  <!DOCTYPE html>
+  <html>
+  </html>

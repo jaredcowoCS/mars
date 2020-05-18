@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  billing_terms: 1
+  credit_rating: 1
+
+two:
+  name: MyString
+  billing_terms: 1
+  credit_rating: 1
